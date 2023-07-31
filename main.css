@@ -51,6 +51,7 @@ h3 {
 .contacts,
 .footer {
     padding: 60px 0;
+    display: flex;
 }
 
 body {
@@ -59,16 +60,15 @@ body {
 
 header {
     height: 65px;
-    background: #1e2029;
+    background-color: #1e2029;
     position: sticky;
     top: 0;
     z-index: 10;
 }
 
-header .main-wrapper {
+header > .main-wrapper {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     height: 100%;
 }
 
@@ -89,12 +89,17 @@ footer {
 
 .main-menu>ul>li {
     display: inline-block;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: white;
+    margin-right: 15px;
+    cursor: pointer;
+    position: relative;
 }
 
-.bb {
-    border: 1px red solid;
+.main-menu {
+    margin-left: auto;
 }
-
 
 .main-menu>ul>li>a {
     color: aliceblue;
@@ -133,7 +138,7 @@ footer {
 
 }
 
-.main-board .main-wrapper {
+.main-board > .main-wrapper {
     display: flex;
     align-items: center;
     height: 100%;
@@ -304,6 +309,8 @@ footer {
     background: url(img/banner-bg.jpg) no-repeat fixed;
     background-size: cover;
     position: relative;
+    display: flex;
+
 }
 
 .works::after,
@@ -318,11 +325,12 @@ footer {
     z-index: 1;
 }
 
-.works>.main-wrapper>div {
+.works > .main-wrapper > div {
     display: flex;
     width: 100%;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .works>.main-wrapper,
@@ -760,6 +768,12 @@ footer > .main-wrapper {
     .services_item {
         border: 1px solid #161c356e;
     }
+
+    .works > .main-wrapper > div {
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
 }
 
 @media  (max-width: 980px) {
@@ -790,7 +804,7 @@ footer > .main-wrapper {
     .main-board {
         height: auto;
         padding: 30px 0;
-        background: url(src/bg.jpg) no-repeat;
+        background: url(img/bg_main.jpg) no-repeat fixed;
     }
 
     .main-board_left-block > div:last-of-type {
@@ -811,7 +825,7 @@ footer > .main-wrapper {
         overflow: hidden;
     }
 
-    .services, .works, .team, .blog, .contact, footer {
+    .services, .works, .team, .blog, .contacts, footer {
         padding: 30px 0;
     }
 }
